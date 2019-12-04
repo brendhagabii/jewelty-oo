@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="joalheria.control.Principal">
+    <top>
+        <MenuBar>
+            <menus>
+                <Menu text="Manter Clientes">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#abrirJanelaNovoCliente" text="Novo Cliente" />
+                  <MenuItem mnemonicParsing="false" onAction="#abrirJanelaEditarCliente" text="Editar Cliente" />
+                  <MenuItem mnemonicParsing="false" onAction="#abrirJanelaRemoverCliente" text="Remover Cliente" />
+               </items>
+                </Menu>
+                <Menu text="Manter Produtos">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#abrirJanelaNovoProduto" text="Novo Produto" />
+                  <MenuItem mnemonicParsing="false" onAction="#abrirJanelaEditarProduto" text="Editar Produto" />
+                  <MenuItem mnemonicParsing="false" onAction="#abrirJanelaRemoverProduto" text="Remover Produto" />
+               </items>
+                </Menu>
+               <Menu text="Gerar Relatórios">
+                  <items>
+                     <MenuItem mnemonicParsing="false" onAction="#gerarRelatorio" text="Gerar Histórico do Cliente" />
+                  </items>
+               </Menu>
+            </menus>
+         <effect>
+            <DropShadow />
+         </effect>
+        </MenuBar>
+    </top>
+
+    <center>
+        <HBox>
+            <padding>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </padding>
+         <children>
+            <VBox>
+               <children>
+                  <HBox>
+                     <children>
+                        <Label prefHeight="25.0" text="Clientes">
+                           <effect>
+                              <DropShadow />
+                           </effect></Label>
+                        <TextField fx:id="tfBuscaCliente" promptText="Buscar Clientes" />
+                        <Button mnemonicParsing="false" onAction="#buscaClientes" text="Buscar">
+                           <effect>
+                              <DropShadow />
+                           </effect></Button>
+                     </children>
+                  </HBox>
+                  <HBox>
+                     <children>
+                        <ListView fx:id="ltvClientes">
+                           <effect>
+                              <DropShadow />
+                           </effect></ListView>
+                     </children>
+                  </HBox>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </VBox>
+            <VBox>
+               <children>
+                  <HBox>
+                     <children>
+                        <Label prefHeight="25.0" prefWidth="48.0" text="Produtos">
+                           <effect>
+                              <DropShadow />
+                           </effect></Label>
+                        <TextField fx:id="tfBuscaProduto" promptText="Buscar Produtos" />
+                        <Button mnemonicParsing="false" onAction="#buscaProdutos" text="Buscar">
+                           <effect>
+                              <DropShadow />
+                           </effect></Button>
+                     </children>
+                  </HBox>
+                  <HBox>
+                     <children>
+                        <ListView fx:id="ltvProdutos">
+                           <effect>
+                              <DropShadow />
+                           </effect></ListView>
+                     </children></HBox>
+                  <HBox />
+               </children></VBox>
+            <VBox>
+               <children>
+                  <HBox prefHeight="100.0" prefWidth="300.0">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="300.0" text="Selecione um Cliente e abra uma Compra" textAlignment="CENTER">
+                           <effect>
+                              <DropShadow />
+                           </effect></Label>
+                     </children>
+                  </HBox>
+
+                   <!-- <HBox>
+                       <ImageView fitHeight="36.0" fitWidth="39.0" layoutX="73.0" layoutY="128.0">
+                           <Image url="@../imagens/diamond.png" />
+                           <effect>
+                               <DropShadow />
+                           </effect>
+                       </ImageView>
+                   </HBox> -->
+
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="300.0">
+                     <children>
+                        <Button fx:id="btnAbrirCompra" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#abrirCompra" text="Abrir Compra">
+                           <effect>
+                              <DropShadow />
+                           </effect></Button>
+                     </children></HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="300.0">
+                     <children>
+                        <VBox>
+                           <children>
+                              <Label text="1º Selecione um Produto ao lado.">
+                                 <effect>
+                                    <DropShadow />
+                                 </effect></Label>
+                              <Label alignment="CENTER" contentDisplay="CENTER" text="2º Especifique a quantidade." textAlignment="CENTER">
+                                 <effect>
+                                    <DropShadow />
+                                 </effect></Label>
+                              <Label text="3º Clique em Adicionar ao Carrinho.">
+                                 <effect>
+                                    <DropShadow />
+                                 </effect></Label>
+                           </children>
+                        </VBox>
+                     </children></HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Label text="Quantidade: ">
+                           <effect>
+                              <DropShadow />
+                           </effect></Label>
+                        <TextField fx:id="tfQuantidade" alignment="CENTER">
+                           <effect>
+                              <DropShadow />
+                           </effect></TextField>
+                     </children></HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <VBox>
+                           <children>
+                              <Button fx:id="btnAdicionar" mnemonicParsing="false" onAction="#adicionarProduto" text="Adicionar ao Carrinho">
+                                 <effect>
+                                    <DropShadow />
+                                 </effect></Button>
+                              <Button fx:id="btnFinalizar" mnemonicParsing="false" onAction="#finalizarCompra" prefHeight="23.0" prefWidth="97.0" text="Finalizar Pedido" textAlignment="CENTER">
+                                 <effect>
+                                    <DropShadow />
+                                 </effect></Button>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+
+        </HBox>
+    </center>
+</BorderPane>
